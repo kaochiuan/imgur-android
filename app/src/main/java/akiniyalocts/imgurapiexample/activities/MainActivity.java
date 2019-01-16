@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -128,6 +129,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void success(ImageResponse imageResponse, Response response) {
             clearInput();
+            Toast toast = Toast.makeText(getApplicationContext(), imageResponse.data.link, Toast.LENGTH_LONG);
+            toast.show();
         }
 
         @Override
